@@ -1,20 +1,12 @@
-import { useState } from 'react';
+import useField from 'hook/useField';
 
 const LoginForm = () => {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const [email, handleEmailChange] = useField('');
+  const [password, handlePasswordChange] = useField('');
 
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log(email, password);
-  };
-
-  const handleEmailChange = (e) => {
-    setEmail(e.target.value);
-  };
-
-  const handlePasswordChange = (e) => {
-    setPassword(e.target.value);
   };
 
   return (
