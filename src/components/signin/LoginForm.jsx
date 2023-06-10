@@ -10,23 +10,26 @@ const LoginForm = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <input
-        data-testid='email-input'
-        type='email'
-        value={email}
-        onChange={handleEmailChange}
-      />
-      <input
-        data-testid='password-input'
-        type='password'
-        value={password}
-        onChange={handlePasswordChange}
-      />
-      <button data-testid='signin-button' type='submit'>
-        로그인
-      </button>
-    </form>
+    <>
+      <form onSubmit={handleSubmit}>
+        <input
+          data-testid='email-input'
+          type='email'
+          value={email}
+          onChange={handleEmailChange}
+        />
+        <input
+          data-testid='password-input'
+          type='password'
+          value={password}
+          onChange={handlePasswordChange}
+        />
+        <button data-testid='signin-button' type='submit'>
+          로그인
+        </button>
+      </form>
+      <a href='/signup'>회원가입</a>
+    </>
   );
 };
 
