@@ -3,9 +3,9 @@ import {
   createBrowserRouter,
   Navigate,
 } from 'react-router-dom';
-import SignInPage from './pages/SignInPage';
-import SignUpPage from './pages/SignUpPage';
-import TodoPage from './pages/TodoPage';
+import SignInPage from 'pages/SignInPage';
+import SignUpPage from 'pages/SignUpPage';
+import TodoPage from 'pages/TodoPage';
 
 const router = createBrowserRouter([
   {
