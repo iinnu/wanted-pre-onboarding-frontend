@@ -1,4 +1,8 @@
-import { RouterProvider, createBrowserRouter } from 'react-router-dom';
+import {
+  RouterProvider,
+  createBrowserRouter,
+  Navigate,
+} from 'react-router-dom';
 import SignInPage from './pages/SignInPage';
 import SignUpPage from './pages/SignUpPage';
 import TodoPage from './pages/TodoPage';
@@ -6,7 +10,7 @@ import TodoPage from './pages/TodoPage';
 const router = createBrowserRouter([
   {
     path: '/',
-    element: <div>hello world</div>,
+    element: <Navigate replace to='/signin' />,
   },
   {
     path: '/signin',
