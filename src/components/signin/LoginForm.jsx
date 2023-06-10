@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import useField from 'hook/useField';
+import apiInstance from 'api';
 
 const emailRegex = /.@./;
 const passwordRegex = /.{8,}/;
@@ -9,9 +10,16 @@ const LoginForm = () => {
   const [password, handlePasswordChange] = useField('');
   const [disabled, setDisabled] = useState(true);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(email, password);
+    try {
+      const isLogin = await apiInstance.post('/auth/signin', {
+        email,
+        password,
+      });
+    } catch {
+      alert('이메일이나 비밀번호를 확인해주세요.');
+    }
   };
 
   useEffect(() => {
