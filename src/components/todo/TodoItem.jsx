@@ -3,7 +3,7 @@ import apiInstance from 'api';
 
 const TodoItem = ({ todo, onTodoDelete, onTodoUpdate }) => {
   const [isUpdate, setIsUpdate] = useState(false);
-  const [updatedTodo, setUpdatedTodo] = useState('');
+  const [updatedTodo, setUpdatedTodo] = useState(todo.todo);
   const [checked, setChecked] = useState(todo.isCompleted);
 
   const handleTodoDelete = async () => {
@@ -43,10 +43,10 @@ const TodoItem = ({ todo, onTodoDelete, onTodoUpdate }) => {
           checked={checked}
           onChange={() => setChecked(!checked)}
         />
-        <span>{todo.todo}</span>
       </label>
       {!isUpdate && (
         <>
+          <span>{todo.todo}</span>
           <button data-testid='modify-button' onClick={() => setIsUpdate(true)}>
             수정
           </button>
