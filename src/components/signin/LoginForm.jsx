@@ -36,6 +36,8 @@ const LoginForm = () => {
     const isPasswordOk = passwordRegex.test(password);
     if (isEmailOk && isPasswordOk) {
       setDisabled(false);
+    } else {
+      setDisabled(true);
     }
   }, [email, password]);
 
