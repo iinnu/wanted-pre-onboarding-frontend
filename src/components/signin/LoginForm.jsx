@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import useField from 'hook/useField';
 import apiInstance from 'api';
 
@@ -9,6 +10,7 @@ const LoginForm = () => {
   const [email, handleEmailChange] = useField('');
   const [password, handlePasswordChange] = useField('');
   const [disabled, setDisabled] = useState(true);
+  const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -17,6 +19,12 @@ const LoginForm = () => {
         email,
         password,
       });
+
+      if (isLogin.status === 200) {
+        const { access_token } = isLogin.data;
+        localStorage.setItem('accessToken', access_token);
+        navigate('/todo');
+      }
     } catch {
       alert('이메일이나 비밀번호를 확인해주세요.');
     }
