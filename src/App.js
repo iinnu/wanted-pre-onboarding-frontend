@@ -9,24 +9,27 @@ import TodoPage from 'pages/TodoPage';
 import PublicAuth from 'auth/PublicAuth';
 import PrivateAuth from 'auth/PrivateAuth';
 
-const router = createBrowserRouter([
-  {
-    path: '/',
-    element: <Navigate replace to='/signin' />,
-  },
-  {
-    path: '/signin',
-    element: <PublicAuth Component={SignInPage} redirectURL='/todo' />,
-  },
-  {
-    path: '/signup',
-    element: <PublicAuth Component={SignUpPage} redirectURL='/todo' />,
-  },
-  {
-    path: '/todo',
-    element: <PrivateAuth Component={TodoPage} redirectURL='/signin' />,
-  },
-]);
+const router = createBrowserRouter(
+  [
+    {
+      path: '/',
+      element: <Navigate replace to='/signin' />,
+    },
+    {
+      path: '/signin',
+      element: <PublicAuth Component={SignInPage} redirectURL='/todo' />,
+    },
+    {
+      path: '/signup',
+      element: <PublicAuth Component={SignUpPage} redirectURL='/todo' />,
+    },
+    {
+      path: '/todo',
+      element: <PrivateAuth Component={TodoPage} redirectURL='/signin' />,
+    },
+  ],
+  { basename: '/wanted-pre-onboarding-frontend/' }
+);
 
 const App = () => {
   return <RouterProvider router={router} />;
