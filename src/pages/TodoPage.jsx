@@ -7,7 +7,7 @@ const TodoPage = () => {
   const [todos, setTodos] = useState([]);
 
   const handleTodoCreate = (todo) => {
-    setTodos((todos) => todos.push(todo));
+    setTodos((todos) => [...todos, todo]);
   };
 
   useEffect(() => {
@@ -16,7 +16,7 @@ const TodoPage = () => {
         const todo = await apiInstance.get('/todos');
 
         if (todo.status === 200) {
-          console.log(todo.data);
+          setTodos(todo.data);
         }
       } catch {
         alert('투두리스트 불러오기에 실패했습니다. 다시 시도해주세요.');
