@@ -7,4 +7,11 @@ const apiInstance = axios.create({
   },
 });
 
+apiInstance.interceptors.request.use(function (config) {
+  config.headers['Authorization'] = `Bearer ${localStorage.getItem(
+    'accessToken'
+  )}`;
+  return config;
+});
+
 export default apiInstance;
