@@ -70,7 +70,7 @@ const TodoItem = ({ todo, onTodoDelete, onTodoUpdate }) => {
             data-testid='cancel-button'
             onClick={() => {
               setIsUpdate(false);
-              setUpdatedTodo('');
+              setUpdatedTodo(todo.todo);
             }}
           >
             취소
