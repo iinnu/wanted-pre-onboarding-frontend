@@ -2,7 +2,7 @@ import apiInstance from 'api';
 import { useEffect, useState } from 'react';
 
 const TodoList = () => {
-  const [todo, setTodo] = useState([]);
+  const [todos, setTodos] = useState([]);
 
   useEffect(() => {
     (async () => {
