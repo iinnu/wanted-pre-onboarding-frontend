@@ -68,7 +68,10 @@ const TodoItem = ({ todo, onTodoDelete, onTodoUpdate }) => {
           </button>
           <button
             data-testid='cancel-button'
-            onClick={() => setIsUpdate(false)}
+            onClick={() => {
+              setIsUpdate(false);
+              setUpdatedTodo('');
+            }}
           >
             취소
           </button>
