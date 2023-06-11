@@ -28,7 +28,7 @@ const router = createBrowserRouter(
       element: <PrivateAuth Component={TodoPage} redirectURL='/signin' />,
     },
   ],
-  { basename: '/wanted-pre-onboarding-frontend/' }
+  { basename: process.env.PUBLIC_URL }
 );
 
 const App = () => {
