@@ -1,22 +1,7 @@
-import apiInstance from 'api';
-import { useEffect, useState } from 'react';
+import TodoItem from './TodoItem';
 
-const TodoList = () => {
-  const [todos, setTodos] = useState([]);
-
-  useEffect(() => {
-    (async () => {
-      try {
-        const todo = await apiInstance.get('/todos');
-
-        if (todo.status === 200) {
-          console.log(todo.data);
-        }
-      } catch {
-        alert('투두리스트 불러오기에 실패했습니다. 다시 시도해주세요.');
-      }
-    })();
-  }, []);
+const TodoList = ({ todos }) => {
+  return todos.map((todo) => <TodoItem key={todo.id} todo={todo} />);
 };
 
 export default TodoList;

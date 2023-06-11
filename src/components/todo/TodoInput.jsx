@@ -3,7 +3,7 @@ import useField from 'hook/useField';
 const TodoInput = () => {
   const [title, handleTitleChange] = useField('');
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
   };
 
