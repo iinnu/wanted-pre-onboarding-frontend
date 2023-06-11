@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import useField from 'hook/useField';
 import apiInstance from 'api';
+import * as S from 'components/common';
 
 const emailRegex = /.@./;
 const passwordRegex = /.{8,}/;
@@ -42,23 +43,31 @@ const SignUpForm = () => {
   return (
     <>
       <form onSubmit={handleSubmit}>
-        <input
-          data-testid='email-input'
-          type='email'
-          value={email}
-          onChange={handleEmailChange}
-        />
-        <input
-          data-testid='password-input'
-          type='password'
-          value={password}
-          onChange={handlePasswordChange}
-        />
-        <button data-testid='signup-button' type='submit' disabled={disabled}>
-          회원가입
-        </button>
+        <S.Grid col>
+          <S.Input
+            data-testid='email-input'
+            type='email'
+            value={email}
+            onChange={handleEmailChange}
+            placeholder='Email'
+          />
+          <S.Input
+            data-testid='password-input'
+            type='password'
+            value={password}
+            onChange={handlePasswordChange}
+            placeholder='Password'
+          />
+          <S.BigButton
+            data-testid='signup-button'
+            type='submit'
+            disabled={disabled}
+          >
+            회원가입
+          </S.BigButton>
+        </S.Grid>
       </form>
-      <a href='/signin'>로그인하기</a>
+      <S.A href='/signin'>로그인</S.A>
     </>
   );
 };
