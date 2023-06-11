@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import apiInstance from 'api';
+import * as S from 'components/common';
 
 const TodoItem = ({ todo, onTodoDelete, onTodoUpdate }) => {
   const [isUpdate, setIsUpdate] = useState(false);
@@ -36,7 +37,7 @@ const TodoItem = ({ todo, onTodoDelete, onTodoUpdate }) => {
   };
 
   return (
-    <li>
+    <S.Li>
       <label>
         <input
           type='checkbox'
@@ -46,7 +47,7 @@ const TodoItem = ({ todo, onTodoDelete, onTodoUpdate }) => {
       </label>
       {!isUpdate && (
         <>
-          <span>{todo.todo}</span>
+          <span style={{ marginRight: '10px' }}>{todo.todo}</span>
           <button data-testid='modify-button' onClick={() => setIsUpdate(true)}>
             수정
           </button>
@@ -73,7 +74,7 @@ const TodoItem = ({ todo, onTodoDelete, onTodoUpdate }) => {
           </button>
         </>
       )}
-    </li>
+    </S.Li>
   );
 };
 

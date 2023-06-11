@@ -2,7 +2,7 @@ import TodoItem from './TodoItem';
 
 const TodoList = ({ todos, onTodoDelete, onTodoUpdate }) => {
   return (
-    <>
+    <div>
       {todos.map((todo) => (
         <TodoItem
           key={todo.id}
@@ -11,7 +11,7 @@ const TodoList = ({ todos, onTodoDelete, onTodoUpdate }) => {
           onTodoUpdate={onTodoUpdate}
         />
       ))}
-    </>
+    </div>
   );
 };
 
