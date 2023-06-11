@@ -24,3 +24,7 @@ export const BigButton = styled.button`
   padding: 10px;
   margin: 5px 0;
 `;
+
+export const Li = styled.li`
+  list-style-type: none;
+`;
