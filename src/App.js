@@ -6,6 +6,8 @@ import {
 import SignInPage from 'pages/SignInPage';
 import SignUpPage from 'pages/SignUpPage';
 import TodoPage from 'pages/TodoPage';
+import PublicAuth from 'auth/PublicAuth';
+import PrivateAuth from 'auth/PrivateAuth';
 
 const router = createBrowserRouter([
   {
@@ -14,15 +16,15 @@ const router = createBrowserRouter([
   },
   {
     path: '/signin',
-    element: <SignInPage />,
+    element: <PublicAuth Component={SignInPage} redirectURL='/todo' />,
   },
   {
     path: '/signup',
-    element: <SignUpPage />,
+    element: <PublicAuth Component={SignUpPage} redirectURL='/todo' />,
   },
   {
     path: '/todo',
-    element: <TodoPage />,
+    element: <PrivateAuth Component={TodoPage} redirectURL='/signin' />,
   },
 ]);
 

@@ -22,7 +22,7 @@ const LoginForm = () => {
 
       if (isLogin.status === 200) {
         const { access_token } = isLogin.data;
-        localStorage.setItem('acessToken', access_token);
+        localStorage.setItem('accessToken', access_token);
         navigate('/todo');
       }
     } catch {
