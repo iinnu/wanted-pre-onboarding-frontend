@@ -4,6 +4,7 @@ import apiInstance from 'api';
 const TodoItem = ({ todo, onTodoDelete, onTodoUpdate }) => {
   const [isUpdate, setIsUpdate] = useState(false);
   const [updatedTodo, setUpdatedTodo] = useState('');
+  const [checked, setChecked] = useState(todo.isCompleted);
 
   const handleTodoDelete = async () => {
     try {
@@ -21,7 +22,7 @@ const TodoItem = ({ todo, onTodoDelete, onTodoUpdate }) => {
     try {
       const todoUpdate = await apiInstance.put(`/todos/${todo.id}`, {
         todo: updatedTodo,
-        isCompleted: todo.isCompleted,
+        isCompleted: checked,
       });
 
       if (todoUpdate.status === 200) {
@@ -37,7 +38,11 @@ const TodoItem = ({ todo, onTodoDelete, onTodoUpdate }) => {
   return (
     <li>
       <label>
-        <input type='checkbox' />
+        <input
+          type='checkbox'
+          checked={checked}
+          onChange={() => setChecked(!checked)}
+        />
         <span>{todo.todo}</span>
       </label>
       {!isUpdate && (
