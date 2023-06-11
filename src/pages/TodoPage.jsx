@@ -10,6 +10,21 @@ const TodoPage = () => {
     setTodos((todos) => [...todos, todo]);
   };
 
+  const handleTodoDelete = (id) => {
+    setTodos(todos.filter((todo) => todo.id !== id));
+  };
+
+  const handleTodoUpdate = (updatedTodo) => {
+    setTodos(
+      todos.map((todo) => {
+        if (todo.id === updatedTodo.id) {
+          todo = updatedTodo;
+        }
+        return todo;
+      })
+    );
+  };
+
   useEffect(() => {
     (async () => {
       try {
@@ -28,7 +43,11 @@ const TodoPage = () => {
     <>
       <h1>My Todo</h1>
       <TodoInput onTodoCreate={handleTodoCreate} />
-      <TodoList todos={todos} />
+      <TodoList
+        todos={todos}
+        onTodoDelete={handleTodoDelete}
+        onTodoUpdate={handleTodoUpdate}
+      />
     </>
   );
 };
