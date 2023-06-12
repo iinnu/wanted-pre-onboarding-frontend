@@ -35,10 +35,11 @@
    npm install
    ```
 3. 프로젝트 실행
-   `bash
-      npm start
-      `
-   <br />
+   ```bash
+   npm start
+   ```
+
+<br />
 
 ## 배포 주소
 
