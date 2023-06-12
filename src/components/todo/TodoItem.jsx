@@ -1,11 +1,16 @@
 import { useState } from 'react';
 import apiInstance from 'api';
 import * as S from 'components/common';
+import TodoDefault from './TodoDefault';
 
 const TodoItem = ({ todo, onTodoDelete, onTodoUpdate }) => {
   const [isUpdate, setIsUpdate] = useState(false);
   const [updatedTodo, setUpdatedTodo] = useState(todo.todo);
   const [checked, setChecked] = useState(todo.isCompleted);
+
+  const handleIsUpdate = () => {
+    setIsUpdate(!isUpdate);
+  };
 
   const handleTodoDelete = async () => {
     try {
@@ -46,15 +51,11 @@ const TodoItem = ({ todo, onTodoDelete, onTodoUpdate }) => {
         />
       </label>
       {!isUpdate && (
-        <>
-          <span style={{ marginRight: '10px' }}>{todo.todo}</span>
-          <button data-testid='modify-button' onClick={() => setIsUpdate(true)}>
-            수정
-          </button>
-          <button data-testid='delete-button' onClick={handleTodoDelete}>
-            삭제
-          </button>
-        </>
+        <TodoDefault
+          todo={todo}
+          onClickUpdate={handleIsUpdate}
+          onClickDelete={handleTodoDelete}
+        />
       )}
       {isUpdate && (
         <>
