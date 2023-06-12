@@ -1,7 +1,7 @@
 const TodoDefault = ({ todo, onClickUpdate, onClickDelete }) => {
   return (
     <>
-      <span style={{ marginRight: '10px' }}>{todo.todo}</span>
+      <span style={{ marginRight: '10px' }}>{todo}</span>
       <button data-testid='modify-button' onClick={onClickUpdate}>
         수정
       </button>
