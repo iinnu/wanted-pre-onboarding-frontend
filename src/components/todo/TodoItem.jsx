@@ -41,11 +41,7 @@ const TodoItem = ({ todo, onTodoDelete, onTodoUpdate }) => {
   return (
     <S.Li>
       <label>
-        <input
-          type='checkbox'
-          checked={checked}
-          onChange={() => setChecked(!checked)}
-        />
+        <input type="checkbox" checked={checked} onChange={() => setChecked(!checked)} />
       </label>
       {!isUpdate && (
         <TodoDefault

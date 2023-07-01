@@ -47,29 +47,25 @@ const SignUpForm = () => {
       <form onSubmit={handleSubmit}>
         <S.Grid col>
           <S.Input
-            data-testid='email-input'
-            type='email'
+            data-testid="email-input"
+            type="email"
             value={email}
             onChange={handleEmailChange}
-            placeholder='Email'
+            placeholder="Email"
           />
           <S.Input
-            data-testid='password-input'
-            type='password'
+            data-testid="password-input"
+            type="password"
             value={password}
             onChange={handlePasswordChange}
-            placeholder='Password'
+            placeholder="Password"
           />
-          <S.BigButton
-            data-testid='signup-button'
-            type='submit'
-            disabled={disabled}
-          >
+          <S.BigButton data-testid="signup-button" type="submit" disabled={disabled}>
             회원가입
           </S.BigButton>
         </S.Grid>
       </form>
-      <S.A href='/signin'>로그인</S.A>
+      <S.A href="/signin">로그인</S.A>
     </>
   );
 };

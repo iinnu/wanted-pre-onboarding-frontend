@@ -26,13 +26,8 @@ const TodoInput = ({ onTodoCreate }) => {
   return (
     <div>
       <form onSubmit={handleSubmit}>
-        <input
-          data-testid='new-todo-input'
-          type='text'
-          value={todo}
-          onChange={handleTodoChange}
-        />
-        <button data-testid='new-todo-add-button' type='submit'>
+        <input data-testid="new-todo-input" type="text" value={todo} onChange={handleTodoChange} />
+        <button data-testid="new-todo-add-button" type="submit">
           추가
         </button>
       </form>

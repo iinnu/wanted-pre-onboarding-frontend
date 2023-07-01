@@ -21,7 +21,7 @@ const TodoPage = () => {
           todo = updatedTodo;
         }
         return todo;
-      })
+      }),
     );
   };
 
@@ -43,11 +43,7 @@ const TodoPage = () => {
     <>
       <h1>My Todo</h1>
       <TodoInput onTodoCreate={handleTodoCreate} />
-      <TodoList
-        todos={todos}
-        onTodoDelete={handleTodoDelete}
-        onTodoUpdate={handleTodoUpdate}
-      />
+      <TodoList todos={todos} onTodoDelete={handleTodoDelete} onTodoUpdate={handleTodoUpdate} />
     </>
   );
 };

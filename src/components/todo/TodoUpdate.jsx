@@ -7,18 +7,11 @@ const TodoUpdate = ({ todo, onClickSubmit, onClickCancel }) => {
 
   return (
     <>
-      <input
-        data-testid='modify-input'
-        value={updatedTodo}
-        onChange={handleTodoChange}
-      />
-      <button
-        data-testid='submit-button'
-        onClick={() => onClickSubmit(updatedTodo)}
-      >
+      <input data-testid="modify-input" value={updatedTodo} onChange={handleTodoChange} />
+      <button data-testid="submit-button" onClick={() => onClickSubmit(updatedTodo)}>
         제출
       </button>
-      <button data-testid='cancel-button' onClick={onClickCancel}>
+      <button data-testid="cancel-button" onClick={onClickCancel}>
         취소
       </button>
     </>

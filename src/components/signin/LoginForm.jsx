@@ -46,29 +46,25 @@ const LoginForm = () => {
       <form onSubmit={handleSubmit}>
         <S.Grid col>
           <S.Input
-            data-testid='email-input'
-            type='email'
+            data-testid="email-input"
+            type="email"
             value={email}
             onChange={handleEmailChange}
-            placeholder='Email'
+            placeholder="Email"
           />
           <S.Input
-            data-testid='password-input'
-            type='password'
+            data-testid="password-input"
+            type="password"
             value={password}
             onChange={handlePasswordChange}
-            placeholder='Password'
+            placeholder="Password"
           />
-          <S.BigButton
-            data-testid='signin-button'
-            type='submit'
-            disabled={disabled}
-          >
+          <S.BigButton data-testid="signin-button" type="submit" disabled={disabled}>
             로그인
           </S.BigButton>
         </S.Grid>
       </form>
-      <S.A href='/signup'>회원가입</S.A>
+      <S.A href="/signup">회원가입</S.A>
     </>
   );
 };

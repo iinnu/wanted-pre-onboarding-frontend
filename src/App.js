@@ -1,8 +1,4 @@
-import {
-  RouterProvider,
-  createBrowserRouter,
-  Navigate,
-} from 'react-router-dom';
+import { RouterProvider, createBrowserRouter, Navigate } from 'react-router-dom';
 import SignInPage from 'pages/SignInPage';
 import SignUpPage from 'pages/SignUpPage';
 import TodoPage from 'pages/TodoPage';
@@ -12,19 +8,19 @@ import PrivateAuth from 'auth/PrivateAuth';
 const router = createBrowserRouter([
   {
     path: '/',
-    element: <Navigate replace to='/signin' />,
+    element: <Navigate replace to="/signin" />,
   },
   {
     path: '/signin',
-    element: <PublicAuth Component={SignInPage} redirectURL='/todo' />,
+    element: <PublicAuth Component={SignInPage} redirectURL="/todo" />,
   },
   {
     path: '/signup',
-    element: <PublicAuth Component={SignUpPage} redirectURL='/todo' />,
+    element: <PublicAuth Component={SignUpPage} redirectURL="/todo" />,
   },
   {
     path: '/todo',
-    element: <PrivateAuth Component={TodoPage} redirectURL='/signin' />,
+    element: <PrivateAuth Component={TodoPage} redirectURL="/signin" />,
   },
 ]);
 
